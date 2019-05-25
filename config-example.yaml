@@ -1,0 +1,34 @@
+GITLAB:
+  TOKEN: <gitlab-token>
+  URLS:
+    ADD_COMMENT: <gitlab-server>/api/v4/projects/{}/merge_requests/{}/notes
+    LIST_MERGE_REQUESTS: <gitlab-server>/api/v4/merge_requests.json
+    LINK_TO_MERGE_REQUEST: <gitlab-link-to-merge-request>/merge_requests/{}/diffs
+  USER: <gitlab-username>
+
+JIRA:
+  COMMENT: Here is the link to the merge request:\n{gitlab_mr}
+  PROJECT_NAME: <jira-project-name>
+  STATES:
+    IN_PROGRESS: In Progress
+    REVIEW_READY: Review Ready
+    TO_DO: To Do
+  TOKEN: <jira-token>
+  TICKET_ID_TEMPLATE: <project-id>-{}
+  URLS:
+    LINK_TO_TICKET: <jira-server>/browse/{}
+    SERVER: <jira-server>
+  USER: david.anaton@my-company.com
+
+SETTINGS:
+  PROJECT_FOLDER: /Users/davidanaton/src/my-project
+
+SLACK:
+  CHANNEL: '#code-reviews-requests'
+  # Do not change the <!channel>, that's the way to mention everyon in the channel.
+  MESSAGE: "Hey <!channel>, I need {required_cr} code reviews. :pray:
+Here's the original JIRA ticket: {jira_ticket}
+Here is the link my GitLab MR: {gitlab_mr}"
+  TOKEN: <slack-Token>
+  URLS:
+    POST_MESSAGE: https://slack.com/api/chat.postMessage
